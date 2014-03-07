@@ -8,7 +8,8 @@ import ScalateKeys._
 object OjAppBuild extends Build {
   val Organization = "com.glugbot"
   val Name = "scalatra-eb-codeship"
-  val Version = "0.1.0-SNAPSHOT"
+  val buildNumber = sys.env.get("CI_BUILD_NUMBER").getOrElse("0-SNAPSHOT")
+  val Version = "0.1." + buildNumber
   val ScalaVersion = "2.10.3"
   val ScalatraVersion = "2.3.0-SNAPSHOT"
 
